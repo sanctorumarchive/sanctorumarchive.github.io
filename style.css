@@ -1,0 +1,29 @@
+body {
+  background-color: #121212;
+  color: #efe5ca;
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  margin: 0;
+  padding: 60px 20px;
+}
+
+/* Header */
+h1 {
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size: 56px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-family: 'Allura', cursive;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 20px;
+  opacity: 0.85;
+}
