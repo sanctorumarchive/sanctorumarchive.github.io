@@ -1,22 +1,74 @@
+/* === VISUAL LAYER (background art) === */
+.visual-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Roses (bottom decoration) */
+.roses {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  opacity: 0.35;
+}
+
+/* Frame (center background ornament) */
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  opacity: 0.08;
+}
+
+/* Seal (top ornament) */
+.seal {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  opacity: 0.6;
+}
+
+
+/* === BASE PAGE === */
 body {
   background-color: #121212;
+  background-image: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
+
   color: #efe5ca;
   font-family: 'EB Garamond', serif;
   margin: 0;
 
-  /* tighter, controlled spacing */
   padding: 60px 20px 40px;
 
   text-align: center;
 }
 
-/* Hero container */
+
+/* === HERO CONTAINER === */
 .hero {
   max-width: 600px;
   margin: 0 auto;
+
+  position: relative;
+  z-index: 3;
+
+  animation: fadeIn 1.2s ease forwards;
+  opacity: 0;
 }
 
-/* Header */
+
+/* === HEADER === */
 h1 {
   font-family: 'UnifrakturMaguntia', cursive;
   font-size: clamp(32px, 6vw, 56px);
@@ -26,7 +78,8 @@ h1 {
   text-shadow: 0 0 8px rgba(198, 167, 94, 0.25);
 }
 
-/* Subtitle */
+
+/* === SUBTITLE === */
 .subtitle {
   font-family: 'Allura', cursive;
   font-size: clamp(20px, 4vw, 32px);
@@ -35,19 +88,19 @@ h1 {
   text-shadow: 0 0 6px rgba(198, 167, 94, 0.2);
 }
 
-/* Divider */
+
+/* === DIVIDER === */
 .divider {
   width: 120px;
   height: 1px;
   background-color: #c6a75e;
 
-  /* TRUE CENTERING */
   margin: 20px auto;
-
   display: block;
 }
 
-/* Tagline */
+
+/* === TAGLINE === */
 .tagline {
   font-size: clamp(14px, 3vw, 20px);
   opacity: 0.85;
@@ -55,19 +108,24 @@ h1 {
   margin: 0 auto;
 }
 
-/* Mobile adjustments */
+
+/* === MOBILE === */
 @media (max-width: 600px) {
   body {
     padding: 40px 15px 30px;
   }
+
+  .roses {
+    width: 350px;
+  }
+
+  .frame {
+    width: 400px;
+  }
 }
 
-/* Fade-in animation */
-.hero {
-  animation: fadeIn 1.2s ease forwards;
-  opacity: 0;
-}
 
+/* === FADE ANIMATION === */
 @keyframes fadeIn {
   from {
     opacity: 0;
