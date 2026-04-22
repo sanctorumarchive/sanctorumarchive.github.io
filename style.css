@@ -10,17 +10,19 @@
   overflow: hidden;
 }
 
-/* 🌹 ROSES (corner composition, NOT centered) */
+/* 🌹 ROSES  */
 .roses {
   position: absolute;
-  bottom: -60px;
-  left: -80px;
+  bottom: -40px;
+  left: 40px;
 
-  width: 420px;
+  width: 260px;
 
-  opacity: 0.25;
+  opacity: 0.35;
 
-  transform: rotate(-8deg);
+  transform: rotate(-12deg);
+
+  filter: brightness(0.9) contrast(1.1);
 }
 
 /* 🪟 FRAME (subtle, centered, background only) */
