@@ -10,25 +10,20 @@
   overflow: hidden;
 }
 
-
-/* 🌹 ROSE (fixed, elegant placement) */
+/* 🌹 ROSES (corner composition, NOT centered) */
 .roses {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -60px;
+  left: -80px;
 
-  width: 320px;
+  width: 420px;
 
-  opacity: 0.18;
+  opacity: 0.25;
 
-  transform: translate(-10%, 10%);
-  filter: brightness(0.7) contrast(1.1);
-
-  pointer-events: none;
+  transform: rotate(-8deg);
 }
 
-
-/* 🪟 FRAME (centered background) */
+/* 🪟 FRAME (subtle, centered, background only) */
 .frame {
   position: absolute;
   top: 50%;
@@ -41,8 +36,7 @@
   opacity: 0.06;
 }
 
-
-/* 🪙 SEAL (top accent) */
+/* 🪙 SEAL (top, but NOT overwhelming) */
 .seal {
   position: absolute;
   top: -120px;
@@ -62,21 +56,25 @@ body {
   color: #efe5ca;
   font-family: 'EB Garamond', serif;
   margin: 0;
-  padding: 100px 20px 80px;
+  padding: 80px 20px 60px;
   text-align: center;
 }
 
 
-/* === HERO (FIXED — NO BLACK BOX) === */
+/* === HERO (this is key fix) === */
 .hero {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
 
   position: relative;
   z-index: 3;
 
-  background: none; /* 🔥 removes black box */
-  padding: 0;
+  /* ✨ SOFT BACKDROP (this is what you asked for) */
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+
+  padding: 40px 30px;
+  border-radius: 6px;
 
   animation: fadeIn 1.2s ease forwards;
   opacity: 0;
@@ -123,8 +121,8 @@ h1 {
 /* === MOBILE FIXES === */
 @media (max-width: 600px) {
   .roses {
-    width: 260px;
-    left: -40px;
+    width: 280px;
+    left: -60px;
   }
 
   .frame {
@@ -134,6 +132,10 @@ h1 {
   .seal {
     width: 180px;
     top: -90px;
+  }
+
+  .hero {
+    padding: 30px 20px;
   }
 }
 
