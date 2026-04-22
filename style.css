@@ -1,4 +1,4 @@
-/* === VISUAL LAYER (background art) === */
+/* === VISUAL LAYER === */
 .visual-layer {
   position: fixed;
   top: 0;
@@ -7,61 +7,74 @@
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  overflow: hidden;
 }
 
-/* Roses (bottom decoration) */
+/* 🌹 ROSES (corner composition, NOT centered) */
 .roses {
   position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  opacity: 0.35;
+  bottom: -60px;
+  left: -80px;
+
+  width: 420px;
+
+  opacity: 0.25;
+
+  transform: rotate(-8deg);
 }
 
-/* Frame (center background ornament) */
+/* 🪟 FRAME (subtle, centered, background only) */
 .frame {
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
-  width: 600px;
-  opacity: 0.08;
+
+  width: 420px;
+
+  opacity: 0.06;
 }
 
-/* Seal (top ornament) */
+/* 🪙 SEAL (top, but NOT overwhelming) */
 .seal {
   position: absolute;
-  top: 40px;
+  top: -120px;
   left: 50%;
+
   transform: translateX(-50%);
-  width: 120px;
-  opacity: 0.6;
+
+  width: 260px;
+
+  opacity: 0.12;
 }
 
 
-/* === BASE PAGE === */
+/* === BODY === */
 body {
-  background-color: #121212;
-  background-image: radial-gradient(circle at top, #1a1a1a, #0d0d0d);
-
+  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
   color: #efe5ca;
   font-family: 'EB Garamond', serif;
   margin: 0;
-
-  padding: 60px 20px 40px;
-
+  padding: 80px 20px 60px;
   text-align: center;
 }
 
 
-/* === HERO CONTAINER === */
+/* === HERO (this is key fix) === */
 .hero {
   max-width: 600px;
   margin: 0 auto;
 
   position: relative;
   z-index: 3;
+
+  /* ✨ SOFT BACKDROP (this is what you asked for) */
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+
+  padding: 40px 30px;
+  border-radius: 6px;
 
   animation: fadeIn 1.2s ease forwards;
   opacity: 0;
@@ -71,61 +84,63 @@ body {
 /* === HEADER === */
 h1 {
   font-family: 'UnifrakturMaguntia', cursive;
-  font-size: clamp(32px, 6vw, 56px);
-  letter-spacing: 1px;
+  font-size: clamp(34px, 6vw, 56px);
   margin-bottom: 16px;
 
-  text-shadow: 0 0 8px rgba(198, 167, 94, 0.25);
+  text-shadow: 0 0 10px rgba(198, 167, 94, 0.3);
 }
 
 
 /* === SUBTITLE === */
 .subtitle {
   font-family: 'Allura', cursive;
-  font-size: clamp(20px, 4vw, 32px);
+  font-size: clamp(20px, 4vw, 30px);
   margin-bottom: 16px;
-
-  text-shadow: 0 0 6px rgba(198, 167, 94, 0.2);
+  opacity: 0.9;
 }
 
 
 /* === DIVIDER === */
 .divider {
-  width: 120px;
+  width: 100px;
   height: 1px;
-  background-color: #c6a75e;
-
+  background: linear-gradient(to right, transparent, #c6a75e, transparent);
   margin: 20px auto;
-  display: block;
 }
 
 
 /* === TAGLINE === */
 .tagline {
-  font-size: clamp(14px, 3vw, 20px);
-  opacity: 0.85;
-  max-width: 500px;
+  font-size: clamp(14px, 3vw, 18px);
+  opacity: 0.8;
+  max-width: 480px;
   margin: 0 auto;
 }
 
 
-/* === MOBILE === */
+/* === MOBILE FIXES === */
 @media (max-width: 600px) {
-  body {
-    padding: 40px 15px 30px;
-  }
-
   .roses {
-    width: 350px;
+    width: 280px;
+    left: -60px;
   }
 
   .frame {
-    width: 400px;
+    width: 300px;
+  }
+
+  .seal {
+    width: 180px;
+    top: -90px;
+  }
+
+  .hero {
+    padding: 30px 20px;
   }
 }
 
 
-/* === FADE ANIMATION === */
+/* === FADE === */
 @keyframes fadeIn {
   from {
     opacity: 0;
