@@ -11,24 +11,23 @@
 }
 
 
-/* 🌹 ROSE (fixed, elegant placement) */
+/* 🌹 ROSE — BACK TO CENTER COMPOSITION (like your original look) */
 .roses {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 80px;
+  left: 50%;
 
-  width: 320px;
+  transform: translateX(-50%);
 
-  opacity: 0.18;
+  width: 360px;
 
-  transform: translate(-10%, 10%);
-  filter: brightness(0.7) contrast(1.1);
+  opacity: 0.28;
 
-  pointer-events: none;
+  filter: brightness(0.85) contrast(1.1);
 }
 
 
-/* 🪟 FRAME (centered background) */
+/* 🪟 FRAME */
 .frame {
   position: absolute;
   top: 50%;
@@ -36,23 +35,23 @@
 
   transform: translate(-50%, -50%);
 
-  width: 420px;
+  width: 460px;
 
-  opacity: 0.06;
+  opacity: 0.08;
 }
 
 
-/* 🪙 SEAL (top accent) */
+/* 🪙 SEAL */
 .seal {
   position: absolute;
-  top: -120px;
+  top: -110px;
   left: 50%;
 
   transform: translateX(-50%);
 
   width: 260px;
 
-  opacity: 0.12;
+  opacity: 0.14;
 }
 
 
@@ -62,12 +61,12 @@ body {
   color: #efe5ca;
   font-family: 'EB Garamond', serif;
   margin: 0;
-  padding: 100px 20px 80px;
+  padding: 80px 20px 60px;
   text-align: center;
 }
 
 
-/* === HERO (FIXED — NO BLACK BOX) === */
+/* === HERO (NO BOX, FLOATING TEXT) === */
 .hero {
   max-width: 700px;
   margin: 0 auto;
@@ -75,7 +74,7 @@ body {
   position: relative;
   z-index: 3;
 
-  background: none; /* 🔥 removes black box */
+  background: none;
   padding: 0;
 
   animation: fadeIn 1.2s ease forwards;
@@ -120,11 +119,11 @@ h1 {
 }
 
 
-/* === MOBILE FIXES === */
+/* === MOBILE === */
 @media (max-width: 600px) {
   .roses {
     width: 260px;
-    left: -40px;
+    bottom: 40px;
   }
 
   .frame {
@@ -133,7 +132,7 @@ h1 {
 
   .seal {
     width: 180px;
-    top: -90px;
+    top: -80px;
   }
 }
 
