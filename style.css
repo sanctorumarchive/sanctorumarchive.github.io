@@ -56,7 +56,10 @@
 
 /* === BODY === */
 body {
-  background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+  background:
+    radial-gradient(circle at top, #1a1a1a, #0b0b0b),
+    url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+
   color: #efe5ca;
   font-family: 'EB Garamond', serif;
   margin: 0;
