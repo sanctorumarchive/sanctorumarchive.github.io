@@ -36,7 +36,7 @@
 
   width: 600px;
 
-  opacity: 0.22;
+  opacity: 0.18;
 }
 
 
@@ -130,8 +130,8 @@ h1 {
   }
 
   .seal {
-    width: 180px;
-    top: -100px;
+    width: 40px;
+    top: 20px;
   }
 }
 
