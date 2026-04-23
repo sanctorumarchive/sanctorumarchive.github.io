@@ -43,7 +43,7 @@
 /* 🪙 SEAL (top glow accent) */
 .seal {
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 50%;
 
   transform: translateX(-50%);
