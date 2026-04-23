@@ -13,7 +13,7 @@
 /* 🌹 ROSES (corner composition like your original) */
 .roses {
   position: absolute;
-  Top: 0px;
+  top: 0px;
   left: 0px;
 
   width: 420px;
@@ -31,12 +31,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 
   width: 600px;
 
-  opacity: 0.18;
+  opacity: 0.08; /* 🔥 lower this */
+
+  filter: blur(0.6px); /* 🔥 softens banding edges */
 }
 
 
@@ -147,4 +148,15 @@ h1 {
     transform: translateY(0);
   }
 }
-/* redeploy */
+
+/* 👁️ SMOOTH OVERLAY */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background: radial-gradient(circle at center, transparent 40%, #000 100%);
+  opacity: 0.35;
+}
