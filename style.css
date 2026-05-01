@@ -15,13 +15,9 @@
   position: absolute;
   top: 0px;
   left: 0px;
-
   width: 420px;
-
   opacity: 0.28;
-
   transform: rotate(0deg);
-
   filter: brightness(0.85) contrast(1.1);
 }
 
@@ -31,9 +27,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 600px;
-
   opacity: 0.18;
   filter: blur(0.6px);
 }
@@ -43,11 +37,8 @@
   position: absolute;
   top: 20px;
   left: 50%;
-
   transform: translateX(-50%);
-
   width: 120px;
-
   opacity: 0.45;
 }
 
@@ -63,7 +54,7 @@ body {
 }
 
 
-/* === PAGE WRAPPER (NEW — KEEP HERE) === */
+/* === PAGE WRAPPER === */
 .page {
   position: relative;
   z-index: 3;
@@ -74,12 +65,9 @@ body {
 .hero {
   max-width: 700px;
   margin: 0 auto;
-
   position: relative;
-
   background: none;
   padding: 0;
-
   animation: fadeIn 1.2s ease forwards;
   opacity: 0;
 }
@@ -90,7 +78,6 @@ h1 {
   font-family: 'UnifrakturMaguntia', cursive;
   font-size: clamp(36px, 6vw, 60px);
   margin-bottom: 16px;
-
   text-shadow: 0 0 12px rgba(198, 167, 94, 0.35);
 }
 
@@ -121,51 +108,57 @@ h1 {
   margin: 0 auto;
 }
 
-/* === INTRO SECTION === */
+
+/* ========================= */
+/* === INTRO SECTION NEW === */
+/* ========================= */
+
 .intro {
   margin-top: 120px;
   padding: 0 20px;
 }
 
-.intro-inner {
+/* ✨ CARD CONTAINER */
+.intro-card {
   max-width: 1000px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 420px 1fr;
+  gap: 50px;
+
   align-items: center;
-}
 
+  padding: 40px;
 
-/* IMAGE */
-.intro-image {
-  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(198, 167, 94, 0.15);
+  border-radius: 8px;
+
   position: relative;
 }
 
+/* IMAGE */
 .intro-image img {
   width: 100%;
-  max-width: 420px;
-
+  max-width: 380px;
   border-radius: 6px;
 
-  /* soft sacred glow */
-  box-shadow: 0 0 40px rgba(198, 167, 94, 0.08);
-  opacity: 0.95;
+  box-shadow:
+    0 0 30px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(198, 167, 94, 0.08);
 }
 
 /* CAPTION */
 .caption {
-  margin-top: 14px;
-  font-size: 13px;
-  opacity: 0.7;
+  font-size: 12px;
+  margin-top: 10px;
+  opacity: 0.65;
   font-style: italic;
   max-width: 360px;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 /* TEXT */
 .intro-text {
@@ -174,9 +167,8 @@ h1 {
 
 .intro-text h2 {
   font-family: 'UnifrakturMaguntia', cursive;
-  font-size: clamp(28px, 4vw, 42px);
-  margin-bottom: 20px;
-
+  font-size: clamp(26px, 4vw, 40px);
+  margin-bottom: 10px;
   text-shadow: 0 0 8px rgba(198, 167, 94, 0.2);
 }
 
@@ -186,27 +178,64 @@ h1 {
   opacity: 0.9;
 }
 
-
-/* ✨ subtle divider above section */
-.intro::before {
-  content: "";
-  display: block;
-  width: 120px;
+/* GOLD LINE */
+.ornament-line {
+  width: 80px;
   height: 1px;
   background: linear-gradient(to right, transparent, #c6a75e, transparent);
-  margin: 0 auto 60px;
+  margin: 20px 0;
+}
+
+/* BUTTON */
+.intro-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+
+  border: 1px solid #c6a75e;
+  color: #efe5ca;
+
+  text-decoration: none;
+  font-size: 14px;
+
+  background: rgba(60, 20, 40, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+.intro-btn:hover {
+  background: rgba(120, 40, 80, 0.6);
+  box-shadow: 0 0 15px rgba(198, 167, 94, 0.2);
+}
+
+/* DRIP ORNAMENT */
+.drip {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  width: 120px;
+  opacity: 0.25;
 }
 
 
 /* 📱 MOBILE */
 @media (max-width: 800px) {
-  .intro-inner {
+  .intro-card {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 25px;
   }
 
   .intro-text {
     text-align: center;
+  }
+
+  .intro-image img {
+    margin: 0 auto;
+  }
+
+  .drip {
+    display: none;
   }
 }
 
@@ -227,6 +256,7 @@ h1 {
   }
 }
 
+
 /* === FADE === */
 @keyframes fadeIn {
   from {
@@ -240,7 +270,7 @@ h1 {
 }
 
 
-/* 👁️ SMOOTH OVERLAY (KEEP LAST) */
+/* 👁️ SMOOTH OVERLAY */
 body::after {
   content: "";
   position: fixed;
