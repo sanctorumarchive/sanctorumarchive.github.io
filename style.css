@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-/* 🌹 ROSES (corner composition like your original) */
+/* 🌹 ROSES */
 .roses {
   position: absolute;
   top: 0px;
@@ -25,8 +25,7 @@
   filter: brightness(0.85) contrast(1.1);
 }
 
-
-/* 🪟 FRAME (center faint gothic window) */
+/* 🪟 FRAME */
 .frame {
   position: absolute;
   top: 50%;
@@ -35,13 +34,11 @@
 
   width: 600px;
 
-  opacity: 0.18; 
-
-  filter: blur(0.6px); /* 🔥 softens banding edges */
+  opacity: 0.18;
+  filter: blur(0.6px);
 }
 
-
-/* 🪙 SEAL (top glow accent) */
+/* 🪙 SEAL */
 .seal {
   position: absolute;
   top: 20px;
@@ -66,13 +63,19 @@ body {
 }
 
 
-/* === HERO (NO BOX — FLOATING TEXT) */
+/* === PAGE WRAPPER (NEW — KEEP HERE) === */
+.page {
+  position: relative;
+  z-index: 3;
+}
+
+
+/* === HERO === */
 .hero {
   max-width: 700px;
   margin: 0 auto;
 
   position: relative;
-  z-index: 3;
 
   background: none;
   padding: 0;
@@ -149,7 +152,8 @@ h1 {
   }
 }
 
-/* 👁️ SMOOTH OVERLAY */
+
+/* 👁️ SMOOTH OVERLAY (KEEP LAST) */
 body::after {
   content: "";
   position: fixed;
@@ -159,9 +163,4 @@ body::after {
 
   background: radial-gradient(circle at center, transparent 40%, #000 100%);
   opacity: 0.35;
-}
-
-.page {
-  position: relative;
-  z-index: 3;
 }
